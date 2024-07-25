@@ -92,8 +92,6 @@ class _HTTPProviderCore:  # pylint: disable=too-few-public-methods
 
 
 def _parse_raw(raw: str, parser: Type[T]) -> T:
-    print("got raw data ", raw)
-    print("parser ", parser)
     if parser:
         parsed = parser.from_json(raw)  # type: ignore
         if isinstance(parsed, RPCError.__args__):  # type: ignore # TODO: drop py37 and use typing.get_args
